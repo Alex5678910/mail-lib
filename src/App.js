@@ -11,13 +11,13 @@ import TodoAppMain from './Components/redux-todo/TodoAppMain'
 import WaypointPicker from "./Components/YandexMap/yandexMap";
 import Calculator from "./Components/calculator/calculator";
 import News from "./Components/webdev-test/Posts/posts";
+import React from "react";
+import Component02 from "./Components/testing-library/component-02";
 
 function App() {
     return (
         <div className="App">
-            <ProxyState>
-                {() => 10 + 'HELLO'}
-            </ProxyState>
+            <ProxyState children={() => 10 + 'HELLO'}/>
             <Link to="/use-input-main">Первый хук</Link>
             <Link to="/use-hover">Второй хук</Link>
             <Link to="/todo">Третий хук</Link>
@@ -28,6 +28,7 @@ function App() {
             <Link to="/map">YandexMap</Link>
             <Link to="/News">News</Link>
             <Link to="/Calculator">Calculator</Link>
+            <Link to="/comp">TEST</Link>
             <Switch>
                 <Route exact path="/use-input-main" component={UseInputMain}/>
                 <Route exact path="/use-hover" component={Hover}/>
@@ -39,6 +40,7 @@ function App() {
                 <Route exact path="/map" component={WaypointPicker}/>
                 <Route exact path="/News" component={News}/>
                 <Route exact path="/Calculator" component={Calculator}/>
+                <Route exact path="/comp" component={Component02}/>
             </Switch>
         </div>
     );
